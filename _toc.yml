@@ -1,0 +1,22 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+---
+format: jb-book
+root: book/introduction
+parts:
+  - caption: NiLearn Session
+    chapters:
+      - file: book/fMRI_analysis_with_nilearn/0_Landing_page
+        sections:
+          - file: book/fMRI_analysis_with_nilearn/1_Setup
+          - file: book/fMRI_analysis_with_nilearn/2_Dataset
+          - file: book/fMRI_analysis_with_nilearn/3_First_level_analysis
+          - file: book/fMRI_analysis_with_nilearn/4_Exercises
+
+  - caption: Solutions
+    chapters:
+    - file: book/solutions/0_Landing_page
+
+  - caption: References
+    chapters:
+      - file: book/references

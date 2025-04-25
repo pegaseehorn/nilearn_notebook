@@ -1,0 +1,12 @@
+jupyter-book
+numpy
+pandas
+matplotlib
+scipy
+seaborn
+nilearn
+scikit-learn
+jupyterquiz
+jupytercards
+ipywidgets
+

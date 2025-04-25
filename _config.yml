@@ -1,0 +1,38 @@
+title: Psy270 - fMRI analysis with NiLearn in Python
+author: Inga Henrike Zimmermann & Sophia Haake
+logo: fmri.gif
+copyright: "2025 Inga Henrike Zimmermann & Sophia Haake"
+# Useful reference for creating the config: https://jupyterbook.org/en/stable/customize/config.html
+
+# Do not execute notebooks
+execute:
+  execute_notebooks: "off"
+
+exclude_patterns: [".venv", "README.md", test.ipynb, test.py]
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - book/references.bib
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/pegaseehorn/nilearn_notebook
+  branch: main
+
+# Add GitHub buttons to your book
+html:
+  home_page_in_navbar: false
+  use_issues_button: true
+  use_repository_button: true
+  baseurl: https://github.com/pegaseehorn/nilearn_notebook
+  extra_css:
+    - _static/custom.css
+
+# Google colab launch button
+launch_buttons:
+  colab_url: "https://colab.research.google.com"
