@@ -32,7 +32,7 @@ Today's session ⛅️
 :height: 100
 ```
 +++
-Explore the chapter {fas}`arrow-right`
+Explore the session {fas}`arrow-right`
 :::
 
 :::{grid-item-card}
@@ -46,7 +46,7 @@ Exercise solutions 📋
 :height: 100
 ```
 +++
-Download the template {fas}`arrow-right`
+Look at the solutions {fas}`arrow-right`
 :::
 
 :::{grid-item-card}
@@ -60,7 +60,7 @@ References 📚
 :height: 100
 ```
 +++
-Explore the chapter {fas}`arrow-right`
+Look at the references {fas}`arrow-right`
 :::
 
 ::::

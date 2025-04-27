@@ -10,12 +10,17 @@ parts:
         sections:
           - file: book/fMRI_analysis_with_nilearn/1_Setup
           - file: book/fMRI_analysis_with_nilearn/2_Dataset
-          - file: book/fMRI_analysis_with_nilearn/3_First_level_analysis
-          - file: book/fMRI_analysis_with_nilearn/4_Exercises
+          - file: book/fMRI_analysis_with_nilearn/3_First_level_analysis1
+          - file: book/fMRI_analysis_with_nilearn/3.1_Exercise_1
+          - file: book/fMRI_analysis_with_nilearn/3.2_First_level_analysis2
+          - file: book/fMRI_analysis_with_nilearn/3.3_Exercise_2
+          - file: book/fMRI_analysis_with_nilearn/4_Second_level_analysis
+          - file: book/fMRI_analysis_with_nilearn/4.1_Exercise_3
+
 
   - caption: Solutions
     chapters:
-    - file: book/solutions/0_Landing_page
+    - file: book/solutions/Solutions_exercises
 
   - caption: References
     chapters:
