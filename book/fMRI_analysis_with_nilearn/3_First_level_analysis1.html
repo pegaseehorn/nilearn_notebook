@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>First (single) level analysis - Part 1: &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/fMRI_analysis_with_nilearn/3_First_level_analysis1';</script>
+    <link rel="canonical" href="https://github.com/pegaseehorn/nilearn_notebook/book/fMRI_analysis_with_nilearn/3_First_level_analysis1.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercise 1 - Design matrix" href="3.1_Exercise_1.html" />
+    <link rel="prev" title="Dataset handling" href="2_Dataset.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/fmri.gif" class="logo__image only-light" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>
+    <script>document.write(`<img src="../../_static/fmri.gif" class="logo__image only-dark" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">NiLearn Session</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> Welcome to the session on fMRI analyis with NiLearn in Python!</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1_Setup.html">Setup coding environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Dataset.html">Dataset handling</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">First (single) level analysis - Part 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise 1 - Design matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.2_First_level_analysis2.html">First (single) level analysis - Part 2:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise 2 - Interpretation of first level analysis output plot:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise 3 - Interpretation of second level analysis output plot:</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../solutions/Solutions_exercises.html">Advanced Markdown Syntax Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/pegaseehorn/nilearn_notebook/blob/main/book/fMRI_analysis_with_nilearn/3_First_level_analysis1.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pegaseehorn/nilearn_notebook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pegaseehorn/nilearn_notebook/issues/new?title=Issue%20on%20page%20%2Fbook/fMRI_analysis_with_nilearn/3_First_level_analysis1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/book/fMRI_analysis_with_nilearn/3_First_level_analysis1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>First (single) level analysis - Part 1:</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="first-single-level-analysis-part-1">
+<h1>First (single) level analysis - Part 1:<a class="headerlink" href="#first-single-level-analysis-part-1" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Due to jupyter notebook limitations we have to create a function to run a previous notebook in the background to use it&#39;s output here in the analysis pipeline:</span>
+
+<span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">nbformat</span>
+
+<span class="k">def</span> <span class="nf">execute_notebook</span><span class="p">(</span><span class="n">nbfile</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">io</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">nbfile</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">nb</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">nb</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">!=</span> <span class="s1">&#39;code&#39;</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">ip</span><span class="o">.</span><span class="n">run_cell</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+
+<span class="n">execute_notebook</span><span class="p">(</span><span class="s1">&#39;2_Dataset.ipynb&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nilearn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">first_level_from_bids</span>
+
+<span class="n">task_label</span> <span class="o">=</span> <span class="s2">&quot;languagelocalizer&quot;</span>
+<span class="p">(</span>
+    <span class="n">models</span><span class="p">,</span>
+    <span class="n">models_run_imgs</span><span class="p">,</span>
+    <span class="n">models_events</span><span class="p">,</span>
+    <span class="n">models_confounds</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="n">first_level_from_bids</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">data_dir</span><span class="p">,</span>                     <span class="c1"># path to dataset</span>
+    <span class="n">task_label</span><span class="p">,</span>
+    <span class="n">img_filters</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;desc&quot;</span><span class="p">,</span> <span class="s2">&quot;preproc&quot;</span><span class="p">)],</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">space_label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">sub_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;02&quot;</span><span class="p">,</span> <span class="s2">&quot;03&quot;</span><span class="p">,</span> <span class="s2">&quot;04&quot;</span><span class="p">],</span>  <span class="c1"># comment to run all subjects</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/rg/gfn3fn_s15bb_bs5l1kkblsm0000gn/T/ipykernel_63497/4036119558.py:9: UserWarning: &#39;StartTime&#39; not found in file /Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset/derivatives/sub-01/func/sub-01_task-languagelocalizer_desc-preproc_bold.json.
+  ) = first_level_from_bids(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="c1"># Assuming you have already run first_level_from_bids</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">))</span>
+    <span class="c1"># Fit the model before accessing design_matrices_</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">models_run_imgs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">models_events</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">models_confounds</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Subject </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Design Matrix&quot;</span><span class="p">)</span>
+    <span class="n">design_matrix</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">design_matrices_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Design matrix of first run</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_design_matrix</span><span class="p">(</span><span class="n">design_matrix</span><span class="p">)</span>
+    <span class="c1"># Display the first few rows</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x13e4c77e0&gt;
+Subject 1: Design Matrix
+     language  string      RotX      RotY      RotZ        X        Y  \
+0.0  0.000000     0.0  0.049782 -0.015877  0.006005 -2.89331  7.02019   
+1.5  0.000000     0.0  0.049579 -0.015300  0.005969 -2.89903  7.01277   
+3.0  0.000000     0.0  0.049899 -0.015055  0.005724 -2.88839  7.03311   
+4.5  0.000416     0.0  0.050209 -0.015752  0.005528 -2.88713  7.02144   
+6.0  0.057955     0.0  0.049601 -0.015629  0.006192 -2.88762  7.01049   
+
+           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0 -5.27795  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5 -5.25286  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0 -5.26949  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5 -5.27385  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0 -5.24182  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+&lt;enumerate object at 0x13e18b420&gt;
+Subject 2: Design Matrix
+     language  string      RotX      RotY      RotZ        X        Y  \
+0.0  0.000000     0.0 -0.049952  0.031096 -0.081769 -1.93505 -3.33725   
+1.5  0.000000     0.0 -0.052543  0.030482 -0.082420 -1.92123 -3.38339   
+3.0  0.000000     0.0 -0.057430  0.029570 -0.085312 -1.91972 -3.46452   
+4.5  0.000416     0.0 -0.054868  0.029988 -0.084088 -1.88626 -3.51273   
+6.0  0.057955     0.0 -0.053298  0.029319 -0.084589 -1.85687 -3.43571   
+
+            Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0 -0.193771  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5 -0.148253  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0 -0.293911  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5 -0.143888  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0 -0.156960  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+&lt;enumerate object at 0x169428310&gt;
+Subject 3: Design Matrix
+     language  string      RotX      RotY      RotZ        X         Y  \
+0.0  0.000000     0.0  0.014264 -0.027363 -0.061099 -1.66021 -0.281034   
+1.5  0.000000     0.0  0.014611 -0.027769 -0.061864 -1.65561 -0.267233   
+3.0  0.000000     0.0  0.014800 -0.027716 -0.061828 -1.65565 -0.276454   
+4.5  0.000416     0.0  0.015154 -0.027191 -0.061873 -1.65813 -0.250126   
+6.0  0.057955     0.0  0.015895 -0.027241 -0.062071 -1.65616 -0.213499   
+
+           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0  3.82029  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5  3.78274  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0  3.81511  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5  3.78685  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0  3.75456  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+&lt;enumerate object at 0x1694d0b80&gt;
+Subject 4: Design Matrix
+     language  string      RotX      RotY      RotZ        X        Y  \
+0.0  0.000000     0.0 -0.037851 -0.040735  0.100145  2.28751  2.59566   
+1.5  0.000000     0.0 -0.037885 -0.040610  0.100149  2.27976  2.58851   
+3.0  0.000000     0.0 -0.037945 -0.041096  0.100456  2.28213  2.57906   
+4.5  0.000701     0.0 -0.038530 -0.040913  0.099980  2.28463  2.59449   
+6.0  0.067908     0.0 -0.038594 -0.040473  0.099267  2.27672  2.61172   
+
+           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0 -6.54900  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5 -6.53929  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0 -6.54380  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5 -6.54513  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0 -6.55482  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+</pre></div>
+</div>
+<img alt="../../_images/c09184139322b4c5e2e56ff52b73518cb0b99564363063e52552213bc4f2acd0.png" src="../../_images/c09184139322b4c5e2e56ff52b73518cb0b99564363063e52552213bc4f2acd0.png" />
+<img alt="../../_images/5d30b6256b3d48010ff08148e56d13cc9e72ab34f21ec09b73ded033e74a969e.png" src="../../_images/5d30b6256b3d48010ff08148e56d13cc9e72ab34f21ec09b73ded033e74a969e.png" />
+<img alt="../../_images/eb8e27106a9fc9ca7b8ced872c0f69b2ba89e34d85b759fa50db7f26267199a5.png" src="../../_images/eb8e27106a9fc9ca7b8ced872c0f69b2ba89e34d85b759fa50db7f26267199a5.png" />
+<img alt="../../_images/880f9c466a19d84839d7ba272a57f3479af034f5071cdf2f540b6e845a439e93.png" src="../../_images/880f9c466a19d84839d7ba272a57f3479af034f5071cdf2f540b6e845a439e93.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/fMRI_analysis_with_nilearn"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_Dataset.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dataset handling</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="3.1_Exercise_1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 1 - Design matrix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Inga Henrike Zimmermann & Sophia Haake
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025 Inga Henrike Zimmermann &amp; Sophia Haake.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
