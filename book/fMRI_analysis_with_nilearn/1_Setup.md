@@ -14,8 +14,6 @@ kernelspec:
 
 We can either run the code locally with Python installed on our own machine, or utilise the universities' High Performance Cluster. Two options are described in this Jupyter Notebook.
 
-````{tab-set}
-```{tab-item} Local execution
 
 # Setup coding environment
 
@@ -61,11 +59,3 @@ If the environment now shows up as `(NiLearn)`, you are ready to install the req
 pip install nilearn
 ```
 
-```
-
-
-
-```{tab-item} Execution on HPC
-Test
-
-```
