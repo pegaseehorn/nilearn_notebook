@@ -1,0 +1,1046 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk. &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/HPC_version';</script>
+    <link rel="canonical" href="https://github.com/pegaseehorn/nilearn_notebook/book/HPC_version.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced Markdown Syntax Exercises" href="solutions/Solutions_exercises.html" />
+    <link rel="prev" title="Exercise 3 - Interpretation of second level analysis output plot:" href="fMRI_analysis_with_nilearn/4.1_Exercise_3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="introduction.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/fmri.gif" class="logo__image only-light" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>
+    <script>document.write(`<img src="../_static/fmri.gif" class="logo__image only-dark" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">NiLearn Session</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="fMRI_analysis_with_nilearn/0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> Welcome to the session on fMRI analyis with NiLearn in Python!</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/1_Setup.html">Setup coding environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/2_Dataset.html">Dataset handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3_First_level_analysis1.html">First (single) level analysis - Part 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3.1_Exercise_1.html">Exercise 1 - Design matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3.2_First_level_analysis2.html">First (single) level analysis - Part 2:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3.3_Exercise_2.html">Exercise 2 - Interpretation of first level analysis output plot:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/4_Second_level_analysis.html">Second (group) level analysis:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/4.1_Exercise_3.html">Exercise 3 - Interpretation of second level analysis output plot:</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC Version</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk.</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="solutions/Solutions_exercises.html">Advanced Markdown Syntax Exercises</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/pegaseehorn/nilearn_notebook/blob/main/book/HPC_version.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/pegaseehorn/nilearn_notebook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/pegaseehorn/nilearn_notebook/issues/new?title=Issue%20on%20page%20%2Fbook/HPC_version.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/book/HPC_version.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk.</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-handling">Dataset handling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-nilearn">Importing NiLearn:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-importing-the-dataset">Downloading / importing the dataset:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-multiple-files">Matching multiple files:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sanity-check">Sanity check:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-single-level-analysis">First (single) level analysis:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifiying-the-model">Specifiying the model:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-the-model">Fitting the model:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-z-map">Plotting the z-map</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#second-group-level-analysis">Second (group) level analysis:</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="this-file-contains-a-singular-continuous-file-of-the-code-from-today-for-easy-uploading-to-the-hpc-of-the-university-and-import-into-neurodesk">
+<h1>This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk.<a class="headerlink" href="#this-file-contains-a-singular-continuous-file-of-the-code-from-today-for-easy-uploading-to-the-hpc-of-the-university-and-import-into-neurodesk" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="dataset-handling">
+<h1>Dataset handling<a class="headerlink" href="#dataset-handling" title="Link to this heading">#</a></h1>
+<section id="importing-nilearn">
+<h2>Importing NiLearn:<a class="headerlink" href="#importing-nilearn" title="Link to this heading">#</a></h2>
+<p>Like always in python we start by importing the necessary packages:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nilearn</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-importing-the-dataset">
+<h2>Downloading / importing the dataset:<a class="headerlink" href="#downloading-importing-the-dataset" title="Link to this heading">#</a></h2>
+<p>Then we download the dataset to work with during this session.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download language localizer demo dataset.</span>
+<span class="kn">from</span> <span class="nn">nilearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_language_localizer_demo_dataset</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">fetch_language_localizer_demo_dataset</span><span class="p">(</span><span class="n">legacy_output</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[get_dataset_dir] Dataset found in /Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, we can import a dataset from our local hard disk by pointing to the nifti files directly or importing them as a nifti image object via the python package ‘nibabel’.</p>
+<p>Here we show demo code displaying how to input your own BIDS-formatted dataset from your hard disk via nibabel.
+Nifti images can be 3D or 4D. A 4D nifti image may for instance represent a time series of 3D images, or contain multiple brain volumes (e.g. from subjects). It can be a list of file names, if these contain 3D information.</p>
+<p>result_img is a 4D in-memory image, containing the data of both subjects.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">script</span> echo skipping # included to automatically skip this code block on code execution, as we use the one above for today.
+
+# Our BIDS-formatted dataset folder contains subject1.nii and subject2.nii
+
+# First, we download the necessary packages for using nibabel:
+import os
+import numpy as np
+from nibabel.testing import data_path
+import nibabel as nib
+
+# Then, we specifiy the path to the image, as well as the image name:
+example_filename = os.path.join(data_path, [&#39;~dataset/subject1.nii&#39;, &#39;~dataset/subject2.nii&#39;])
+
+# Then, we load the image with the load function from nibabel; this results in a class of object called a &#39;Nifti1mage object&#39;, specifically created to work with MRI data in Python:
+img = nib.load(example_filename)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>skipping # included to automatically skip this code block on code execution, as we use the one above for today.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="matching-multiple-files">
+<h2>Matching multiple files:<a class="headerlink" href="#matching-multiple-files" title="Link to this heading">#</a></h2>
+<p>Suppose the dataset folder contains subject_01.nii, subject_03.nii, and subject_03.nii. You can use a python capability called ‘globbing’ to use a single expression to load multiple datasets.
+‘~dataset/subject_*.nii’ is such a glob expression matching all filenames. The code would change as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">script</span> echo skipping
+
+example_filename = os.path.join(data_path, &#39;~dataset/subject_*.nii&#39;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>skipping
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sanity-check">
+<h2>Sanity check:<a class="headerlink" href="#sanity-check" title="Link to this heading">#</a></h2>
+<p>Now we can check, whether the dataset was correctly downloaded by checking its location on the hard disk and disply a short description of the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">data_dir</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
+.. _language_localizer_dataset:
+
+language localizer demo dataset
+===============================
+
+Access
+------
+See :func:`nilearn.datasets.fetch_language_localizer_demo_dataset`.
+
+Notes
+-----
+10 subjects were scanned with fMRI during a &quot;language localizer&quot;
+where they (covertly) read meaningful sentences (trial_type=&#39;language&#39;)
+or strings of consonants (trial_type=&#39;string&#39;),
+presented one word at a time at the center of the screen (rapid serial visual presentation).
+
+The functional images files (in derivatives/)
+have been preprocessed (spatially realigned and normalized into the :term:`MNI` space).
+Initially acquired with a :term:`voxel` size of 1.5x1.5x1.5mm,
+they have been resampled to 4.5x4.5x4.5mm to save disk space.
+
+https://osf.io/k4jp8/
+
+Content
+-------
+    :&#39;data_dir&#39;: Path to downloaded dataset.
+    :&#39;downloaded_files&#39;: Absolute paths of downloaded files on disk
+
+
+References
+----------
+
+
+License
+-------
+ODC-BY-SA
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="first-single-level-analysis">
+<h1>First (single) level analysis:<a class="headerlink" href="#first-single-level-analysis" title="Link to this heading">#</a></h1>
+<p>First level models are, in essence, linear regression models run at the level of a single run or single subject. The model is applied on a voxel-wise basis, either on the whole brain or within a region of interest. The timecourse of each voxel is regressed against a predicted BOLD response created by convolving the haemodynamic response function (HRF) with a set of predictors defined within the design matrix.</p>
+<p>In NiLearn we use them as follows:</p>
+<section id="specifiying-the-model">
+<h2>Specifiying the model:<a class="headerlink" href="#specifiying-the-model" title="Link to this heading">#</a></h2>
+<p>First, we have to specify the model. NiLearn offers a few ways to do this for multiple ways of formatting the dataset. How to use it for your dataset specifically can be read in the NiLearn documentation under ‘User guide’ -&gt; ‘First level models’.</p>
+<p>In our case, as we used that method to download the dataset, we follow the path outlined in the document on how to use ‘First level analysis of a complete BIDS dataset from openneuro’.</p>
+<p>We have a event-based dataset, as described in the dataset description, so we have to specify the events for NiLearn to calculate the design matrix on them.</p>
+<p>You can look at the documentation and specify more parameters past the task labels, for example space labels other than the default, a specific derivatives folder (generated by pre-processing) if you saved it somewhere else.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.glm.first_level</span> <span class="kn">import</span> <span class="n">first_level_from_bids</span>
+
+<span class="n">task_label</span> <span class="o">=</span> <span class="s2">&quot;languagelocalizer&quot;</span>
+<span class="p">(</span>
+    <span class="n">models</span><span class="p">,</span>
+    <span class="n">models_run_imgs</span><span class="p">,</span>
+    <span class="n">models_events</span><span class="p">,</span>
+    <span class="n">models_confounds</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">=</span> <span class="n">first_level_from_bids</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">data_dir</span><span class="p">,</span>                     <span class="c1"># variable with path to dataset</span>
+    <span class="n">task_label</span><span class="p">,</span>
+    <span class="n">img_filters</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;desc&quot;</span><span class="p">,</span> <span class="s2">&quot;preproc&quot;</span><span class="p">)],</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">space_label</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">sub_labels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;01&quot;</span><span class="p">,</span> <span class="s2">&quot;02&quot;</span><span class="p">,</span> <span class="s2">&quot;03&quot;</span><span class="p">,</span> <span class="s2">&quot;04&quot;</span><span class="p">],</span>  <span class="c1"># comment to run subset of subjects</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/rg/gfn3fn_s15bb_bs5l1kkblsm0000gn/T/ipykernel_60163/1135415737.py:9: UserWarning: &#39;StartTime&#39; not found in file /Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset/derivatives/sub-01/func/sub-01_task-languagelocalizer_desc-preproc_bold.json.
+  ) = first_level_from_bids(
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fitting-the-model">
+<h2>Fitting the model:<a class="headerlink" href="#fitting-the-model" title="Link to this heading">#</a></h2>
+<p>Then we fit the model for our subset of subjects.
+After we are done we can plot the design matrix for each subject.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="c1"># Assuming you have already run first_level_from_bids</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">model</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">models</span><span class="p">))</span>
+    <span class="c1"># Fit the model before accessing design_matrices_</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">models_run_imgs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">models_events</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">models_confounds</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Subject </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: Design Matrix&quot;</span><span class="p">)</span>
+    <span class="n">design_matrix</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">design_matrices_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Design matrix of first run</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_design_matrix</span><span class="p">(</span><span class="n">design_matrix</span><span class="p">)</span>
+    <span class="c1"># Display the first few rows</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">design_matrix</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x12f301b20&gt;
+Subject 1: Design Matrix
+     language  string      RotX      RotY      RotZ        X        Y  \
+0.0  0.000000     0.0  0.049782 -0.015877  0.006005 -2.89331  7.02019   
+1.5  0.000000     0.0  0.049579 -0.015300  0.005969 -2.89903  7.01277   
+3.0  0.000000     0.0  0.049899 -0.015055  0.005724 -2.88839  7.03311   
+4.5  0.000416     0.0  0.050209 -0.015752  0.005528 -2.88713  7.02144   
+6.0  0.057955     0.0  0.049601 -0.015629  0.006192 -2.88762  7.01049   
+
+           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0 -5.27795  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5 -5.25286  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0 -5.26949  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5 -5.27385  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0 -5.24182  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+&lt;enumerate object at 0x12c3c5850&gt;
+Subject 2: Design Matrix
+     language  string      RotX      RotY      RotZ        X        Y  \
+0.0  0.000000     0.0 -0.049952  0.031096 -0.081769 -1.93505 -3.33725   
+1.5  0.000000     0.0 -0.052543  0.030482 -0.082420 -1.92123 -3.38339   
+3.0  0.000000     0.0 -0.057430  0.029570 -0.085312 -1.91972 -3.46452   
+4.5  0.000416     0.0 -0.054868  0.029988 -0.084088 -1.88626 -3.51273   
+6.0  0.057955     0.0 -0.053298  0.029319 -0.084589 -1.85687 -3.43571   
+
+            Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0 -0.193771  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5 -0.148253  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0 -0.293911  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5 -0.143888  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0 -0.156960  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+&lt;enumerate object at 0x12f315d50&gt;
+Subject 3: Design Matrix
+     language  string      RotX      RotY      RotZ        X         Y  \
+0.0  0.000000     0.0  0.014264 -0.027363 -0.061099 -1.66021 -0.281034   
+1.5  0.000000     0.0  0.014611 -0.027769 -0.061864 -1.65561 -0.267233   
+3.0  0.000000     0.0  0.014800 -0.027716 -0.061828 -1.65565 -0.276454   
+4.5  0.000416     0.0  0.015154 -0.027191 -0.061873 -1.65813 -0.250126   
+6.0  0.057955     0.0  0.015895 -0.027241 -0.062071 -1.65616 -0.213499   
+
+           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0  3.82029  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5  3.78274  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0  3.81511  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5  3.78685  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0  3.75456  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+&lt;enumerate object at 0x12fe703b0&gt;
+Subject 4: Design Matrix
+     language  string      RotX      RotY      RotZ        X        Y  \
+0.0  0.000000     0.0 -0.037851 -0.040735  0.100145  2.28751  2.59566   
+1.5  0.000000     0.0 -0.037885 -0.040610  0.100149  2.27976  2.58851   
+3.0  0.000000     0.0 -0.037945 -0.041096  0.100456  2.28213  2.57906   
+4.5  0.000701     0.0 -0.038530 -0.040913  0.099980  2.28463  2.59449   
+6.0  0.067908     0.0 -0.038594 -0.040473  0.099267  2.27672  2.61172   
+
+           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
+0.0 -6.54900  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
+1.5 -6.53929  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
+3.0 -6.54380  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
+4.5 -6.54513  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
+6.0 -6.55482  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
+
+     constant  
+0.0       1.0  
+1.5       1.0  
+3.0       1.0  
+4.5       1.0  
+6.0       1.0  
+</pre></div>
+</div>
+<img alt="../_images/c09184139322b4c5e2e56ff52b73518cb0b99564363063e52552213bc4f2acd0.png" src="../_images/c09184139322b4c5e2e56ff52b73518cb0b99564363063e52552213bc4f2acd0.png" />
+<img alt="../_images/5d30b6256b3d48010ff08148e56d13cc9e72ab34f21ec09b73ded033e74a969e.png" src="../_images/5d30b6256b3d48010ff08148e56d13cc9e72ab34f21ec09b73ded033e74a969e.png" />
+<img alt="../_images/eb8e27106a9fc9ca7b8ced872c0f69b2ba89e34d85b759fa50db7f26267199a5.png" src="../_images/eb8e27106a9fc9ca7b8ced872c0f69b2ba89e34d85b759fa50db7f26267199a5.png" />
+<img alt="../_images/880f9c466a19d84839d7ba272a57f3479af034f5071cdf2f540b6e845a439e93.png" src="../_images/880f9c466a19d84839d7ba272a57f3479af034f5071cdf2f540b6e845a439e93.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="nb">print</span><span class="p">([</span><span class="n">Path</span><span class="p">(</span><span class="n">run</span><span class="p">)</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">run</span> <span class="ow">in</span> <span class="n">models_run_imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;sub-01_task-languagelocalizer_desc-preproc_bold.nii.gz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">models_confounds</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;RotX&#39;, &#39;RotY&#39;, &#39;RotZ&#39;, &#39;X&#39;, &#39;Y&#39;, &#39;Z&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">models_events</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;trial_type&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>trial_type
+language    12
+string      12
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we specify the significance level for our single level analysis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+
+<span class="n">p001_unc</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">isf</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-the-z-map">
+<h2>Plotting the z-map<a class="headerlink" href="#plotting-the-z-map" title="Link to this heading">#</a></h2>
+<p>Finally, we plot the significant z-values for all of our subjects analysed in the first level analysis. We specify our contrast of interest in this step via the .compute_contrast function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">ceil</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span> <span class="c1"># import plotting here</span>
+
+<span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">nrows</span> <span class="o">=</span> <span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">models</span><span class="p">)</span> <span class="o">/</span> <span class="n">ncols</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">))</span>
+<span class="n">axes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="n">axes</span><span class="p">)</span>
+<span class="n">model_and_args</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">models_run_imgs</span><span class="p">,</span> <span class="n">models_events</span><span class="p">,</span> <span class="n">models_confounds</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">midx</span><span class="p">,</span> <span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">imgs</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">confounds</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model_and_args</span><span class="p">):</span>
+    <span class="c1"># fit the GLM</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">imgs</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">confounds</span><span class="p">)</span>
+    <span class="c1"># compute the contrast of interest</span>
+    <span class="n">zmap</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">compute_contrast</span><span class="p">(</span><span class="s2">&quot;language-string&quot;</span><span class="p">)</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_glass_brain</span><span class="p">(</span>
+        <span class="n">zmap</span><span class="p">,</span>
+        <span class="n">colorbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">threshold</span><span class="o">=</span><span class="n">p001_unc</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;sub-</span><span class="si">{</span><span class="n">model</span><span class="o">.</span><span class="n">subject_label</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">midx</span> <span class="o">/</span> <span class="n">ncols</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">midx</span> <span class="o">%</span> <span class="n">ncols</span><span class="p">)],</span>
+        <span class="n">plot_abs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+        <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bwr&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;subjects z_map language network (unc p&lt;0.001)&quot;</span><span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e79bb1f02f204c702faa6fcf647b01216484d319ede54ff7222686ad0da05ebf.png" src="../_images/e79bb1f02f204c702faa6fcf647b01216484d319ede54ff7222686ad0da05ebf.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="second-group-level-analysis">
+<h1>Second (group) level analysis:<a class="headerlink" href="#second-group-level-analysis" title="Link to this heading">#</a></h1>
+<p>Second level models in Nilearn are used to perform group-level analyses on fMRI data. Once individual subjects have been processed in a common space (e.g. MNI, Talairach, or subject average), the data can be grouped and statistical tests performed to make broader inferences on fMRI activity. Some common second level models are one-sample (unpaired or paired) and two-sample t-tests.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.glm.second_level</span> <span class="kn">import</span> <span class="n">SecondLevelModel</span>
+
+<span class="n">second_level_input</span> <span class="o">=</span> <span class="n">models</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">second_level_model</span> <span class="o">=</span> <span class="n">SecondLevelModel</span><span class="p">(</span><span class="n">smoothing_fwhm</span><span class="o">=</span><span class="mf">8.0</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">second_level_model</span> <span class="o">=</span> <span class="n">second_level_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">second_level_input</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zmap</span> <span class="o">=</span> <span class="n">second_level_model</span><span class="o">.</span><span class="n">compute_contrast</span><span class="p">(</span>
+    <span class="n">first_level_contrast</span><span class="o">=</span><span class="s2">&quot;language-string&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plotting</span><span class="o">.</span><span class="n">plot_glass_brain</span><span class="p">(</span>
+    <span class="n">zmap</span><span class="p">,</span>
+    <span class="n">colorbar</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">threshold</span><span class="o">=</span><span class="n">p001_unc</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Group language network (unc p&lt;0.001)&quot;</span><span class="p">,</span>
+    <span class="n">plot_abs</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">display_mode</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">figure</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bwr&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plotting</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c45a0fae088984becd5029ae18f7eac7d93ed5422dd38b2917ab96b9ad4f90c2.png" src="../_images/c45a0fae088984becd5029ae18f7eac7d93ed5422dd38b2917ab96b9ad4f90c2.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Exception ignored in: &lt;function ResourceTracker.__del__ at 0x1066d9ee0&gt;
+Traceback (most recent call last):
+  File &quot;/opt/miniconda3/envs/NiLearn/lib/python3.13/multiprocessing/resource_tracker.py&quot;, line 82, in __del__
+  File &quot;/opt/miniconda3/envs/NiLearn/lib/python3.13/multiprocessing/resource_tracker.py&quot;, line 91, in _stop
+  File &quot;/opt/miniconda3/envs/NiLearn/lib/python3.13/multiprocessing/resource_tracker.py&quot;, line 116, in _stop_locked
+ChildProcessError: [Errno 10] No child processes
+Exception ignored in: &lt;function ResourceTracker.__del__ at 0x102d2dee0&gt;
+Traceback (most recent call last):
+  File &quot;/opt/miniconda3/envs/NiLearn/lib/python3.13/multiprocessing/resource_tracker.py&quot;, line 82, in __del__
+  File &quot;/opt/miniconda3/envs/NiLearn/lib/python3.13/multiprocessing/resource_tracker.py&quot;, line 91, in _stop
+  File &quot;/opt/miniconda3/envs/NiLearn/lib/python3.13/multiprocessing/resource_tracker.py&quot;, line 116, in _stop_locked
+ChildProcessError: [Errno 10] No child processes
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fMRI_analysis_with_nilearn/4.1_Exercise_3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 3 - Interpretation of second level analysis output plot:</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="solutions/Solutions_exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced Markdown Syntax Exercises</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk.</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-handling">Dataset handling</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-nilearn">Importing NiLearn:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-importing-the-dataset">Downloading / importing the dataset:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matching-multiple-files">Matching multiple files:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sanity-check">Sanity check:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#first-single-level-analysis">First (single) level analysis:</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specifiying-the-model">Specifiying the model:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-the-model">Fitting the model:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-z-map">Plotting the z-map</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#second-group-level-analysis">Second (group) level analysis:</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Inga Henrike Zimmermann & Sophia Haake
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025 Inga Henrike Zimmermann &amp; Sophia Haake.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
