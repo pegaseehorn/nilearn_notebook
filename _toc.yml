@@ -18,6 +18,10 @@ parts:
           - file: book/fMRI_analysis_with_nilearn/4.1_Exercise_3
 
 
+  - caption: HPC Version
+    chapters:
+    - file: book/HPC_version
+
   - caption: Solutions
     chapters:
     - file: book/solutions/Solutions_exercises
