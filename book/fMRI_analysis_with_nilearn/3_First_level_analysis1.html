@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -446,7 +446,9 @@ document.write(`
 <p>Due to jupyter notebook limitations we have to create a function to run a previous notebook in the background to use its output here in the analysis pipeline:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">io</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+
+<span class="kn">import</span> <span class="nn">io</span>
 <span class="kn">import</span> <span class="nn">nbformat</span>
 
 <span class="k">def</span> <span class="nf">execute_notebook</span><span class="p">(</span><span class="n">nbfile</span><span class="p">):</span>
@@ -461,50 +463,6 @@ document.write(`
         <span class="n">ip</span><span class="o">.</span><span class="n">run_cell</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
 
 <span class="n">execute_notebook</span><span class="p">(</span><span class="s1">&#39;2_Dataset.ipynb&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[get_dataset_dir] Dataset found in /Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
-skipping
-skipping
-/Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
-.. _language_localizer_dataset:
-
-language localizer demo dataset
-===============================
-
-Access
-------
-See :func:`nilearn.datasets.fetch_language_localizer_demo_dataset`.
-
-Notes
------
-10 subjects were scanned with fMRI during a &quot;language localizer&quot;
-where they (covertly) read meaningful sentences (trial_type=&#39;language&#39;)
-or strings of consonants (trial_type=&#39;string&#39;),
-presented one word at a time at the center of the screen (rapid serial visual presentation).
-
-The functional images files (in derivatives/)
-have been preprocessed (spatially realigned and normalized into the :term:`MNI` space).
-Initially acquired with a :term:`voxel` size of 1.5x1.5x1.5mm,
-they have been resampled to 4.5x4.5x4.5mm to save disk space.
-
-https://osf.io/k4jp8/
-
-Content
--------
-    :&#39;data_dir&#39;: Path to downloaded dataset.
-    :&#39;downloaded_files&#39;: Absolute paths of downloaded files on disk
-
-
-References
-----------
-
-
-License
--------
-ODC-BY-SA
 </pre></div>
 </div>
 </div>

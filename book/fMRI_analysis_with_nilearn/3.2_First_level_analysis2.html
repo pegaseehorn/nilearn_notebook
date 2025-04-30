@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -442,7 +442,9 @@ document.write(`
 <h1>First (single) level analysis - Part 2:<a class="headerlink" href="#first-single-level-analysis-part-2" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">io</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
+
+<span class="kn">import</span> <span class="nn">io</span>
 <span class="kn">import</span> <span class="nn">nbformat</span>
 
 <span class="k">def</span> <span class="nf">execute_notebook</span><span class="p">(</span><span class="n">nbfile</span><span class="p">):</span>
@@ -460,189 +462,6 @@ document.write(`
 <span class="n">execute_notebook</span><span class="p">(</span><span class="s1">&#39;3_First_level_analysis1.ipynb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[get_dataset_dir] Dataset found in /Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
-skipping
-skipping
-/Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
-.. _language_localizer_dataset:
-
-language localizer demo dataset
-===============================
-
-Access
-------
-See :func:`nilearn.datasets.fetch_language_localizer_demo_dataset`.
-
-Notes
------
-10 subjects were scanned with fMRI during a &quot;language localizer&quot;
-where they (covertly) read meaningful sentences (trial_type=&#39;language&#39;)
-or strings of consonants (trial_type=&#39;string&#39;),
-presented one word at a time at the center of the screen (rapid serial visual presentation).
-
-The functional images files (in derivatives/)
-have been preprocessed (spatially realigned and normalized into the :term:`MNI` space).
-Initially acquired with a :term:`voxel` size of 1.5x1.5x1.5mm,
-they have been resampled to 4.5x4.5x4.5mm to save disk space.
-
-https://osf.io/k4jp8/
-
-Content
--------
-    :&#39;data_dir&#39;: Path to downloaded dataset.
-    :&#39;downloaded_files&#39;: Absolute paths of downloaded files on disk
-
-
-References
-----------
-
-
-License
--------
-ODC-BY-SA
-
-[get_dataset_dir] Dataset found in /Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
-skipping
-skipping
-/Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset
-.. _language_localizer_dataset:
-
-language localizer demo dataset
-===============================
-
-Access
-------
-See :func:`nilearn.datasets.fetch_language_localizer_demo_dataset`.
-
-Notes
------
-10 subjects were scanned with fMRI during a &quot;language localizer&quot;
-where they (covertly) read meaningful sentences (trial_type=&#39;language&#39;)
-or strings of consonants (trial_type=&#39;string&#39;),
-presented one word at a time at the center of the screen (rapid serial visual presentation).
-
-The functional images files (in derivatives/)
-have been preprocessed (spatially realigned and normalized into the :term:`MNI` space).
-Initially acquired with a :term:`voxel` size of 1.5x1.5x1.5mm,
-they have been resampled to 4.5x4.5x4.5mm to save disk space.
-
-https://osf.io/k4jp8/
-
-Content
--------
-    :&#39;data_dir&#39;: Path to downloaded dataset.
-    :&#39;downloaded_files&#39;: Absolute paths of downloaded files on disk
-
-
-References
-----------
-
-
-License
--------
-ODC-BY-SA
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/rg/gfn3fn_s15bb_bs5l1kkblsm0000gn/T/ipykernel_47141/1135415737.py:9: UserWarning: &#39;StartTime&#39; not found in file /Users/sophiahaake/nilearn_data/fMRI-language-localizer-demo-dataset/derivatives/sub-01/func/sub-01_task-languagelocalizer_desc-preproc_bold.json.
-  ) = first_level_from_bids(
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x1530fb7e0&gt;
-Subject 1: Design Matrix
-     language  string      RotX      RotY      RotZ        X        Y  \
-0.0  0.000000     0.0  0.049782 -0.015877  0.006005 -2.89331  7.02019   
-1.5  0.000000     0.0  0.049579 -0.015300  0.005969 -2.89903  7.01277   
-3.0  0.000000     0.0  0.049899 -0.015055  0.005724 -2.88839  7.03311   
-4.5  0.000416     0.0  0.050209 -0.015752  0.005528 -2.88713  7.02144   
-6.0  0.057955     0.0  0.049601 -0.015629  0.006192 -2.88762  7.01049   
-
-           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
-0.0 -5.27795  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
-1.5 -5.25286  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
-3.0 -5.26949  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
-4.5 -5.27385  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
-6.0 -5.24182  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
-
-     constant  
-0.0       1.0  
-1.5       1.0  
-3.0       1.0  
-4.5       1.0  
-6.0       1.0  
-&lt;enumerate object at 0x1510c9670&gt;
-Subject 2: Design Matrix
-     language  string      RotX      RotY      RotZ        X        Y  \
-0.0  0.000000     0.0 -0.049952  0.031096 -0.081769 -1.93505 -3.33725   
-1.5  0.000000     0.0 -0.052543  0.030482 -0.082420 -1.92123 -3.38339   
-3.0  0.000000     0.0 -0.057430  0.029570 -0.085312 -1.91972 -3.46452   
-4.5  0.000416     0.0 -0.054868  0.029988 -0.084088 -1.88626 -3.51273   
-6.0  0.057955     0.0 -0.053298  0.029319 -0.084589 -1.85687 -3.43571   
-
-            Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
-0.0 -0.193771  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
-1.5 -0.148253  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
-3.0 -0.293911  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
-4.5 -0.143888  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
-6.0 -0.156960  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
-
-     constant  
-0.0       1.0  
-1.5       1.0  
-3.0       1.0  
-4.5       1.0  
-6.0       1.0  
-&lt;enumerate object at 0x15726ecf0&gt;
-Subject 3: Design Matrix
-     language  string      RotX      RotY      RotZ        X         Y  \
-0.0  0.000000     0.0  0.014264 -0.027363 -0.061099 -1.66021 -0.281034   
-1.5  0.000000     0.0  0.014611 -0.027769 -0.061864 -1.65561 -0.267233   
-3.0  0.000000     0.0  0.014800 -0.027716 -0.061828 -1.65565 -0.276454   
-4.5  0.000416     0.0  0.015154 -0.027191 -0.061873 -1.65813 -0.250126   
-6.0  0.057955     0.0  0.015895 -0.027241 -0.062071 -1.65616 -0.213499   
-
-           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
-0.0  3.82029  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
-1.5  3.78274  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
-3.0  3.81511  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
-4.5  3.78685  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
-6.0  3.75456  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
-
-     constant  
-0.0       1.0  
-1.5       1.0  
-3.0       1.0  
-4.5       1.0  
-6.0       1.0  
-&lt;enumerate object at 0x153e4fa10&gt;
-Subject 4: Design Matrix
-     language  string      RotX      RotY      RotZ        X        Y  \
-0.0  0.000000     0.0 -0.037851 -0.040735  0.100145  2.28751  2.59566   
-1.5  0.000000     0.0 -0.037885 -0.040610  0.100149  2.27976  2.58851   
-3.0  0.000000     0.0 -0.037945 -0.041096  0.100456  2.28213  2.57906   
-4.5  0.000701     0.0 -0.038530 -0.040913  0.099980  2.28463  2.59449   
-6.0  0.067908     0.0 -0.038594 -0.040473  0.099267  2.27672  2.61172   
-
-           Z   drift_1   drift_2   drift_3   drift_4   drift_5   drift_6  \
-0.0 -6.54900  0.093452  0.093445  0.093434  0.093419  0.093399  0.093375   
-1.5 -6.53929  0.093434  0.093375  0.093276  0.093137  0.092960  0.092742   
-3.0 -6.54380  0.093399  0.093234  0.092960  0.092576  0.092083  0.091482   
-4.5 -6.54513  0.093346  0.093023  0.092486  0.091735  0.090774  0.089602   
-6.0 -6.55482  0.093276  0.092742  0.091856  0.090619  0.089037  0.087116   
-
-     constant  
-0.0       1.0  
-1.5       1.0  
-3.0       1.0  
-4.5       1.0  
-6.0       1.0  
-</pre></div>
-</div>
-<img alt="../../_images/c09184139322b4c5e2e56ff52b73518cb0b99564363063e52552213bc4f2acd0.png" src="../../_images/c09184139322b4c5e2e56ff52b73518cb0b99564363063e52552213bc4f2acd0.png" />
-<img alt="../../_images/5d30b6256b3d48010ff08148e56d13cc9e72ab34f21ec09b73ded033e74a969e.png" src="../../_images/5d30b6256b3d48010ff08148e56d13cc9e72ab34f21ec09b73ded033e74a969e.png" />
-<img alt="../../_images/eb8e27106a9fc9ca7b8ced872c0f69b2ba89e34d85b759fa50db7f26267199a5.png" src="../../_images/eb8e27106a9fc9ca7b8ced872c0f69b2ba89e34d85b759fa50db7f26267199a5.png" />
-<img alt="../../_images/880f9c466a19d84839d7ba272a57f3479af034f5071cdf2f540b6e845a439e93.png" src="../../_images/880f9c466a19d84839d7ba272a57f3479af034f5071cdf2f540b6e845a439e93.png" />
 </div>
 </div>
 <div class="cell docutils container">
