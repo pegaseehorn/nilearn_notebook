@@ -17,7 +17,8 @@ We can either run the code locally with Python installed on our own machine, or 
 
 # Setup coding environment
 
-For easy coding environment management we use Anaconda / miniconda.
+If you decide to run the code locally you can follow the guide here:
+For easy coding environment management we can use Anaconda / miniconda.
 
 You should have the following programmes installed:
 
@@ -59,3 +60,9 @@ If the environment now shows up as `(NiLearn)`, you are ready to install the req
 pip install nilearn
 ```
 
+## HPC option
+Preferably, we use the high performance cluster (HPC) to run our code. The notebook for today is plit into different chapters for easy explanation and organisation. But, this also makes it tedious to upload and use the code on the HPC. So, for that you can use the unified code version that you can find in the table of contents under 'HPC version'.
+
+1. Upload this code to the HPC via
+2. Open Neurodesk on the HPC.
+3. Use Neurodesk to open and run this Jupyter Notebook.
