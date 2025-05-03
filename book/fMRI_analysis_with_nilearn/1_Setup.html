@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -178,11 +178,11 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Setup coding environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Dataset.html">Dataset handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_First_level_analysis1.html">First (single) level analysis - Part 1:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise 1 - Design matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise break 1 - Design matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.2_First_level_analysis2.html">First (single) level analysis - Part 2:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise 2 - Interpretation of first level analysis output plot:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise 3 - Interpretation of second level analysis output plot:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise break 3 - Second level analysis:</a></li>
 </ul>
 </details></li>
 </ul>
@@ -420,7 +420,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -436,6 +438,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hpc-option">HPC option</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -448,7 +458,8 @@ document.write(`
   <p>We can either run the code locally with Python installed on our own machine, or utilise the universities’ High Performance Cluster. Two options are described in this Jupyter Notebook.</p>
 <section class="tex2jax_ignore mathjax_ignore" id="setup-coding-environment">
 <h1>Setup coding environment<a class="headerlink" href="#setup-coding-environment" title="Link to this heading">#</a></h1>
-<p>For easy coding environment management we use Anaconda / miniconda.</p>
+<p>If you decide to run the code locally you can follow the guide here:
+For easy coding environment management we can use Anaconda / miniconda.</p>
 <p>You should have the following programmes installed:</p>
 <ul class="simple">
 <li><p>Anaconda (miniconda)</p></li>
@@ -478,6 +489,15 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>nilearn
 </pre></div>
 </div>
+<section id="hpc-option">
+<h2>HPC option<a class="headerlink" href="#hpc-option" title="Link to this heading">#</a></h2>
+<p>Preferably, we use the high performance cluster (HPC) to run our code. The notebook for today is plit into different chapters for easy explanation and organisation. But, this also makes it tedious to upload and use the code on the HPC. So, for that you can use the unified code version that you can find in the table of contents under ‘HPC version’.</p>
+<ol class="arabic simple">
+<li><p>Upload this code to the HPC via</p></li>
+<li><p>Open Neurodesk on the HPC.</p></li>
+<li><p>Use Neurodesk to open and run this Jupyter Notebook.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -534,6 +554,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hpc-option">HPC option</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

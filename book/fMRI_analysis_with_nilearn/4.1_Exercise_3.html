@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise 3 - Interpretation of second level analysis output plot: &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
+    <title>Exercise break 3 - Second level analysis: &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -178,11 +178,11 @@
 <li class="toctree-l2"><a class="reference internal" href="1_Setup.html">Setup coding environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Dataset.html">Dataset handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_First_level_analysis1.html">First (single) level analysis - Part 1:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise 1 - Design matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise break 1 - Design matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.2_First_level_analysis2.html">First (single) level analysis - Part 2:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise 2 - Interpretation of first level analysis output plot:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis:</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise 3 - Interpretation of second level analysis output plot:</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise break 3 - Second level analysis:</a></li>
 </ul>
 </details></li>
 </ul>
@@ -403,7 +403,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -414,11 +416,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 3 - Interpretation of second level analysis output plot:</h1>
+    <h1>Exercise break 3 - Second level analysis:</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-group-4">Exercise 4 - Group 4:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-group-5">Exercise 5 - Group 5:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-advanced-for-python-pros-group-6">Exercise 6 (Advanced, for Python pros) - Group 6:</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -428,8 +440,38 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-interpretation-of-second-level-analysis-output-plot">
-<h1>Exercise 3 - Interpretation of second level analysis output plot:<a class="headerlink" href="#exercise-3-interpretation-of-second-level-analysis-output-plot" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-break-3-second-level-analysis">
+<h1>Exercise break 3 - Second level analysis:<a class="headerlink" href="#exercise-break-3-second-level-analysis" title="Link to this heading">#</a></h1>
+<section id="exercise-4-group-4">
+<h2>Exercise 4 - Group 4:<a class="headerlink" href="#exercise-4-group-4" title="Link to this heading">#</a></h2>
+<p>What is the p-value we use in our second level analysis? (Hint: look at figure 2)</p>
+<ol class="arabic simple">
+<li><p>Where in the code is the parameter that sets this value? Can you change it?</p></li>
+<li><p>Try out a few different values and plot them. What changes?</p></li>
+<li><p>What is a good p-value for the second level analysis? Keep the multiple testing problem in mind.</p></li>
+<li><p>We use an uncorrected p-value. What methods can we use to correct a p-value? Can you find out how one can apply them with NiLearn?</p></li>
+</ol>
+<p>Figure 3:
+<img alt="figure 3" src="../../_images/figure_3.png" /></p>
+</section>
+<section id="exercise-5-group-5">
+<h2>Exercise 5 - Group 5:<a class="headerlink" href="#exercise-5-group-5" title="Link to this heading">#</a></h2>
+<p>In our second level analysis we can specify a smoothing parameter “smoothing_fwhm”.</p>
+<ol class="arabic simple">
+<li><p>Where can we specifiy this parameter in the code? What is the purpose of this parameter? (Hint: use the documentation)</p></li>
+<li><p>Try a few different values for the smoothing parameter an plot them. What changes in the plots?</p></li>
+<li><p>What are the advantages/disadvantages is using small/large smoothing parameters? Which values would you prefer in which situation?</p></li>
+</ol>
+</section>
+<section id="exercise-6-advanced-for-python-pros-group-6">
+<h2>Exercise 6 (Advanced, for Python pros) - Group 6:<a class="headerlink" href="#exercise-6-advanced-for-python-pros-group-6" title="Link to this heading">#</a></h2>
+<p>In our analysis we manually decreased the p-value to 0.001 to adjust the error-rate for the multiple testing problem.</p>
+<ol class="arabic simple">
+<li><p>Can we use NiLearn to do this automatically? What are the two functions that NiLearn provides for that? (Hint: look at the documentation)</p></li>
+<li><p>What is the best correction method? Extend the code so that this correction method is applied.</p></li>
+<li><p>What effect does the correction have on a p-value of 0.05? Plot two second level analysis output plots side-by-side, one with the uncorrected p-value and the other for the corrected p-value.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -486,6 +528,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-group-4">Exercise 4 - Group 4:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-group-5">Exercise 5 - Group 5:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-advanced-for-python-pros-group-6">Exercise 6 (Advanced, for Python pros) - Group 6:</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

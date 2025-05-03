@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -178,11 +178,11 @@
 <li class="toctree-l2"><a class="reference internal" href="1_Setup.html">Setup coding environment</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Dataset handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_First_level_analysis1.html">First (single) level analysis - Part 1:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise 1 - Design matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise break 1 - Design matrix</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.2_First_level_analysis2.html">First (single) level analysis - Part 2:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise 2 - Interpretation of first level analysis output plot:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis:</a></li>
 <li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise 3 - Interpretation of second level analysis output plot:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise break 3 - Second level analysis:</a></li>
 </ul>
 </details></li>
 </ul>
@@ -500,7 +500,8 @@ img = nib.load(example_filename)
 </section>
 <section id="matching-multiple-files">
 <h2>Matching multiple files:<a class="headerlink" href="#matching-multiple-files" title="Link to this heading">#</a></h2>
-<p>Suppose the dataset folder contains subject_01.nii, subject_03.nii, and subject_03.nii. You can use a python capability called ‘globbing’ to use a single expression to load multiple datasets.
+<p>Suppose the dataset folder contains subject_01.nii, subject_03.nii, and subject_03.nii.
+You can use a python capability called ‘globbing’ to use a single expression to load multiple datasets.
 ‘~dataset/subject_*.nii’ is such a glob expression matching all filenames. The code would change as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
