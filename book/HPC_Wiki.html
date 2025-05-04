@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercise break 3 - Second level analysis &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
+    <title>HPC Wiki &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
   
   
   
@@ -18,51 +18,51 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/fMRI_analysis_with_nilearn/4.1_Exercise_3';</script>
-    <link rel="canonical" href="https://github.com/pegaseehorn/nilearn_notebook/book/fMRI_analysis_with_nilearn/4.1_Exercise_3.html" />
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="HPC Version" href="../HPC_version.html" />
-    <link rel="prev" title="Second (group) level analysis" href="4_Second_level_analysis.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/HPC_Wiki';</script>
+    <link rel="canonical" href="https://github.com/pegaseehorn/nilearn_notebook/book/HPC_Wiki.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Advanced Markdown Syntax Exercises" href="solutions/Solutions_exercises.html" />
+    <link rel="prev" title="HPC Version" href="HPC_version.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -94,7 +94,7 @@
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../search.html"
+      action="../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -143,7 +143,7 @@
     
   
 
-<a class="navbar-brand logo" href="../introduction.html">
+<a class="navbar-brand logo" href="introduction.html">
   
   
   
@@ -154,8 +154,8 @@
       
     
     
-    <img src="../../_static/fmri.gif" class="logo__image only-light" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>
-    <script>document.write(`<img src="../../_static/fmri.gif" class="logo__image only-dark" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>`);</script>
+    <img src="../_static/fmri.gif" class="logo__image only-light" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>
+    <script>document.write(`<img src="../_static/fmri.gif" class="logo__image only-dark" alt="Psy270 - fMRI analysis with NiLearn in Python - Home"/>`);</script>
   
   
 </a></div>
@@ -173,34 +173,34 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">NiLearn Session</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> NiLearn Session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="1_Setup.html">Setup coding environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_Dataset.html">Dataset handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_First_level_analysis1.html">First (single) level analysis - Part 1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise break 1 - Design matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.2_First_level_analysis2.html">First (single) level analysis - Part 2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise break 3 - Second level analysis</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="fMRI_analysis_with_nilearn/0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> NiLearn Session</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/1_Setup.html">Setup coding environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/2_Dataset.html">Dataset handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3_First_level_analysis1.html">First (single) level analysis - Part 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3.1_Exercise_1.html">Exercise break 1 - Design matrix</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3.2_First_level_analysis2.html">First (single) level analysis - Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/3.3_Exercise_2.html">Exercise break 2 - First level analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/4_Second_level_analysis.html">Second (group) level analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fMRI_analysis_with_nilearn/4.1_Exercise_3.html">Exercise break 3 - Second level analysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC Version</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../HPC_version.html">HPC Version</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="HPC_version.html">HPC Version</a></li>
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../HPC_Wiki.html">HPC Wiki</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">HPC Wiki</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Solutions</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../solutions/Solutions_exercises.html">Advanced Markdown Syntax Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="solutions/Solutions_exercises.html">Advanced Markdown Syntax Exercises</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
 </ul>
 
     </div>
@@ -255,7 +255,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/pegaseehorn/nilearn_notebook/blob/main/book/fMRI_analysis_with_nilearn/4.1_Exercise_3.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/pegaseehorn/nilearn_notebook/blob/main/book/HPC_Wiki.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -264,7 +264,7 @@
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -303,7 +303,7 @@
       
       
       
-      <li><a href="https://github.com/pegaseehorn/nilearn_notebook/issues/new?title=Issue%20on%20page%20%2Fbook/fMRI_analysis_with_nilearn/4.1_Exercise_3.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/pegaseehorn/nilearn_notebook/issues/new?title=Issue%20on%20page%20%2Fbook/HPC_Wiki.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -333,7 +333,7 @@
       
       
       
-      <li><a href="../../_sources/book/fMRI_analysis_with_nilearn/4.1_Exercise_3.ipynb" target="_blank"
+      <li><a href="../_sources/book/HPC_Wiki.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -417,7 +417,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise break 3 - Second level analysis</h1>
+    <h1>HPC Wiki</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -427,9 +427,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-group-4">Exercise 4 - Group 4:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-group-5">Exercise 5 - Group 5:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-advanced-for-python-pros-group-6">Exercise 6 (Advanced, for Python pros) - Group 6:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data-to-the-hpc">Uploading data to the HPC:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda-on-hpc">Using Conda on HPC:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-neurodesktop-on-hpc">Using Neurodesktop on HPC:</a></li>
 </ul>
             </nav>
         </div>
@@ -441,38 +441,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-break-3-second-level-analysis">
-<h1>Exercise break 3 - Second level analysis<a class="headerlink" href="#exercise-break-3-second-level-analysis" title="Link to this heading">#</a></h1>
-<section id="exercise-4-group-4">
-<h2>Exercise 4 - Group 4:<a class="headerlink" href="#exercise-4-group-4" title="Link to this heading">#</a></h2>
-<p>What is the p-value we use in our second level analysis? (Hint: look at figure 2)</p>
-<ol class="arabic simple">
-<li><p>Where in the code is the parameter that sets this value? Can you change it?</p></li>
-<li><p>Try out a few different values and plot them. What changes?</p></li>
-<li><p>What is a good p-value for the second level analysis? Keep the multiple testing problem in mind.</p></li>
-<li><p>We use an uncorrected p-value. What methods can we use to correct a p-value? Can you find out how one can apply them with NiLearn?</p></li>
-</ol>
-<p>Figure 3:</p>
-<p><img alt="figure 3" src="../../_images/figure_3.png" /></p>
-</section>
-<section id="exercise-5-group-5">
-<h2>Exercise 5 - Group 5:<a class="headerlink" href="#exercise-5-group-5" title="Link to this heading">#</a></h2>
-<p>In our second level analysis we can specify a smoothing parameter “smoothing_fwhm”.</p>
-<ol class="arabic simple">
-<li><p>Where can we specifiy this parameter in the code? What is the purpose of this parameter? (Hint: use the documentation)</p></li>
-<li><p>Try a few different values for the smoothing parameter an plot them. What changes in the plots?</p></li>
-<li><p>What are the advantages/disadvantages is using small/large smoothing parameters? Which values would you prefer in which situation?</p></li>
-</ol>
-</section>
-<section id="exercise-6-advanced-for-python-pros-group-6">
-<h2>Exercise 6 (Advanced, for Python pros) - Group 6:<a class="headerlink" href="#exercise-6-advanced-for-python-pros-group-6" title="Link to this heading">#</a></h2>
-<p>In our analysis we manually decreased the p-value to 0.001 to adjust the error-rate for the multiple testing problem.</p>
-<ol class="arabic simple">
-<li><p>Can we use NiLearn to do this automatically? What are the two functions that NiLearn provides for that? (Hint: look at the documentation)</p></li>
-<li><p>What is the best correction method? Extend the code so that this correction method is applied.</p></li>
-<li><p>What effect does the correction have on a p-value of 0.05? Plot two second level analysis output plots side-by-side, one with the uncorrected p-value and the other for the corrected p-value.</p></li>
-</ol>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="hpc-wiki">
+<h1>HPC Wiki<a class="headerlink" href="#hpc-wiki" title="Link to this heading">#</a></h1>
+<section id="uploading-data-to-the-hpc">
+<h2>Uploading data to the HPC:<a class="headerlink" href="#uploading-data-to-the-hpc" title="Link to this heading">#</a></h2>
+<iframe src="nilearn_notebook/book/fMRI_analysis_with_nilearn/figures/Mounting File Systems | HPC Wiki.pdf" width="100%" height="600" frameborder="0" allowfullscreen></iframe></section>
+<section id="using-conda-on-hpc">
+<h2>Using Conda on HPC:<a class="headerlink" href="#using-conda-on-hpc" title="Link to this heading">#</a></h2>
+<iframe src="nilearn_notebook/book/fMRI_analysis_with_nilearn/figures/Mounting File Systems | HPC Wiki.pdf" width="100%" height="600" frameborder="0" allowfullscreen></iframe></section>
+<section id="using-neurodesktop-on-hpc">
+<h2>Using Neurodesktop on HPC:<a class="headerlink" href="#using-neurodesktop-on-hpc" title="Link to this heading">#</a></h2>
+<iframe src="nilearn_notebook/book/fMRI_analysis_with_nilearn/figures/Mounting File Systems | HPC Wiki.pdf" width="100%" height="600" frameborder="0" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -488,7 +467,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/fMRI_analysis_with_nilearn"
+            path: "./book"
         },
         predefinedOutput: true
     }
@@ -506,20 +485,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="4_Second_level_analysis.html"
+       href="HPC_version.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Second (group) level analysis</p>
+        <p class="prev-next-title">HPC Version</p>
       </div>
     </a>
     <a class="right-next"
-       href="../HPC_version.html"
+       href="solutions/Solutions_exercises.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">HPC Version</p>
+        <p class="prev-next-title">Advanced Markdown Syntax Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -539,9 +518,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-group-4">Exercise 4 - Group 4:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-5-group-5">Exercise 5 - Group 5:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-6-advanced-for-python-pros-group-6">Exercise 6 (Advanced, for Python pros) - Group 6:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-data-to-the-hpc">Uploading data to the HPC:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda-on-hpc">Using Conda on HPC:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-neurodesktop-on-hpc">Using Neurodesktop on HPC:</a></li>
 </ul>
   </nav></div>
 
@@ -590,8 +569,8 @@ By Inga Henrike Zimmermann & Sophia Haake
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
