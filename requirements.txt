@@ -9,4 +9,5 @@ scikit-learn
 jupyterquiz
 jupytercards
 ipywidgets
+IPython
 
