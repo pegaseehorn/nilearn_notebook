@@ -12,7 +12,8 @@ kernelspec:
   name: python3
 ---
 
-# <i class="fa-solid fa-earth-europe"></i> Welcome to the session on fMRI analyis with NiLearn in Python!
+# <i class="fa-solid fa-earth-europe"></i> NiLearn Session
+## Welcome to the session on fMRI analyis with NiLearn in Python!
 
 
 <iframe src="https://drive.google.com/file/d/1VCmdiTL-lTuWh1fCJKYlUQ3a19tCe7t2/preview" width="100%" height="600" frameborder="0" allowfullscreen></iframe>

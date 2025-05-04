@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>First (single) level analysis - Part 2: &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
+    <title>First (single) level analysis - Part 2 &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
   
   
   
@@ -61,7 +61,7 @@
     <link rel="canonical" href="https://github.com/pegaseehorn/nilearn_notebook/book/fMRI_analysis_with_nilearn/3.2_First_level_analysis2.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Exercise break 2 - First level analysis:" href="3.3_Exercise_2.html" />
+    <link rel="next" title="Exercise break 2 - First level analysis" href="3.3_Exercise_2.html" />
     <link rel="prev" title="Exercise break 1 - Design matrix" href="3.1_Exercise_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,21 +174,21 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">NiLearn Session</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> Welcome to the session on fMRI analyis with NiLearn in Python!</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> NiLearn Session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_Setup.html">Setup coding environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Dataset.html">Dataset handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_First_level_analysis1.html">First (single) level analysis - Part 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3_First_level_analysis1.html">First (single) level analysis - Part 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise break 1 - Design matrix</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">First (single) level analysis - Part 2:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise break 3 - Second level analysis:</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">First (single) level analysis - Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise break 3 - Second level analysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC Version</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../HPC_version.html">This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HPC_version.html">HPC Version</a></li>
 
 
 
@@ -416,7 +416,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>First (single) level analysis - Part 2:</h1>
+    <h1>First (single) level analysis - Part 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,7 +426,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-z-map">Plotting the z-map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-z-map">Plotting the z-map:</a></li>
 </ul>
             </nav>
         </div>
@@ -439,7 +439,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="first-single-level-analysis-part-2">
-<h1>First (single) level analysis - Part 2:<a class="headerlink" href="#first-single-level-analysis-part-2" title="Link to this heading">#</a></h1>
+<h1>First (single) level analysis - Part 2<a class="headerlink" href="#first-single-level-analysis-part-2" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span>
@@ -532,7 +532,7 @@ Name: count, dtype: int64
 </div>
 </div>
 <section id="plotting-the-z-map">
-<h2>Plotting the z-map<a class="headerlink" href="#plotting-the-z-map" title="Link to this heading">#</a></h2>
+<h2>Plotting the z-map:<a class="headerlink" href="#plotting-the-z-map" title="Link to this heading">#</a></h2>
 <p>Finally, we plot the significant z-values for all of our subjects analysed in the first level analysis. We specify our contrast of interest in this step via the .compute_contrast function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,7 +633,7 @@ ChildProcessError: [Errno 10] No child processes
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise break 2 - First level analysis:</p>
+        <p class="prev-next-title">Exercise break 2 - First level analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -653,7 +653,7 @@ ChildProcessError: [Errno 10] No child processes
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-z-map">Plotting the z-map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-z-map">Plotting the z-map:</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>First (single) level analysis - Part 1: &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
+    <title>First (single) level analysis - Part 1 &#8212; Psy270 - fMRI analysis with NiLearn in Python</title>
   
   
   
@@ -174,21 +174,21 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">NiLearn Session</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> Welcome to the session on fMRI analyis with NiLearn in Python!</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="0_Landing_page.html"><i class="fa-solid fa-earth-europe"></i> NiLearn Session</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="1_Setup.html">Setup coding environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Dataset.html">Dataset handling</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">First (single) level analysis - Part 1:</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">First (single) level analysis - Part 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3.1_Exercise_1.html">Exercise break 1 - Design matrix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.2_First_level_analysis2.html">First (single) level analysis - Part 2:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise break 3 - Second level analysis:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.2_First_level_analysis2.html">First (single) level analysis - Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3.3_Exercise_2.html">Exercise break 2 - First level analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4_Second_level_analysis.html">Second (group) level analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.1_Exercise_3.html">Exercise break 3 - Second level analysis</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">HPC Version</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../HPC_version.html">This file contains a singular, continuous file of the code from today for easy uploading to the HPC of the university and import into neurodesk.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../HPC_version.html">HPC Version</a></li>
 
 
 
@@ -416,7 +416,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>First (single) level analysis - Part 1:</h1>
+    <h1>First (single) level analysis - Part 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -440,7 +440,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="first-single-level-analysis-part-1">
-<h1>First (single) level analysis - Part 1:<a class="headerlink" href="#first-single-level-analysis-part-1" title="Link to this heading">#</a></h1>
+<h1>First (single) level analysis - Part 1<a class="headerlink" href="#first-single-level-analysis-part-1" title="Link to this heading">#</a></h1>
 <p>First level models are, in essence, linear regression models run at the level of a single run or single subject. The model is applied on a voxel-wise basis, either on the whole brain or within a region of interest. The timecourse of each voxel is regressed against a predicted BOLD response created by convolving the haemodynamic response function (HRF) with a set of predictors defined within the design matrix.</p>
 <p>In NiLearn we use them as follows:</p>
 <p>Due to jupyter notebook limitations we have to create a function to run a previous notebook in the background to use its output here in the analysis pipeline:</p>
