@@ -21,6 +21,7 @@ parts:
   - caption: HPC Version
     chapters:
     - file: book/HPC_version
+    - file: book/HPC_Wiki
 
   - caption: Solutions
     chapters:
