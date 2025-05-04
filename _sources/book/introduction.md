@@ -24,7 +24,7 @@ This book contains content for today's lecture on how to do statistical analysis
 :::{grid-item-card}
 :class-body: text-center
 :class-header: bg-light text-center
-:link: ./fMRI_analysis_with_nilearn/1_psy126/0_Landing_page.md
+:link: ./fMRI_analysis_with_nilearn/0_Landing_page.md
 :link-type: doc
 Today's session ⛅️
 ^^^
