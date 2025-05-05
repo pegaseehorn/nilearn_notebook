@@ -12,7 +12,7 @@ kernelspec:
   name: python3
 ---
 
-We can either run the code locally with Python installed on our own machine, or utilise the universities' High Performance Cluster. Two options are described in this Jupyter Notebook.
+We can either run the code locally with Python installed on our own machine, or utilise the universities' High Performance Compute (HPC) cluster. Two options are described in this Jupyter Notebook.
 
 
 # Setup coding environment
@@ -64,7 +64,11 @@ pip install nilearn
 ## HPC option:
 Preferably, we use the high performance compute (HPC) cluster to run our code. The notebook for today is split into different chapters for easy explanation and organisation. But, this also makes it tedious to upload and use the code on the HPC. So, for that you can use the unified code version that you can find in the table of contents under 'HPC version'.
 
-1. Upload the code in the file 'HPC Version' to the HPC either via Nextcloud or SMB. (For more information, look at the HPC Wiki support article linked in this Jupyter Notebook)
-2. Setup the Conda environment on the HPC. (For more information, look at the HPC Wiki support article linked in this Jupyter Notebook)
-3. Open Neurodesk on the HPC. (For more information, look at the HPC Wiki support article linked in this Jupyter Notebook)
-4. Use Neurodesk to open and run this Jupyter Notebook.
+You can either run NiLearn directly in Python on the HPC, for that see the HPC Wiki entry on Conda on the HPC linked in the 'HPC Wiki' section.
+
+Today we run the Jupyter Notebook directly in Neurodesk on the HPC:
+
+1. (Optional step) Upload the participant data to the HPC either via Nextcloud or SMB. (For more information, look at the HPC Wiki support article linked in this Jupyter Notebook)
+2. Start Neurodesk on the HPC (For more information, look at the HPC Wiki support article linked in this Jupyter Notebook)
+3. Enter the Neurodesk GUI.
+4. Use Neurodesk to open and run the 'HPC_Version.ipynb' Jupyter Notebook.
