@@ -10,4 +10,5 @@ jupyterquiz
 jupytercards
 ipywidgets
 IPython
+sphinxcontrib-bibtex
 
