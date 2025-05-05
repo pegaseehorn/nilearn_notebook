@@ -14,7 +14,7 @@ kernelspec:
 
 # HPC Wiki
 ## Uploading data to the HPC:
-<iframe src="https://pegaseehorn.github.io/nilearn_notebook/book/fMRI_analysis_with_nilearn/figures/Mounting_File_Systems_HPC_Wiki.pdf" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1TAkaiJN1UfFvToH-JKN8uafHCfXssYKC/view?usp=share_link" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
 
 ## Using Conda on HPC:
 [📄 Click here to download and open the wiki article](./figures/Virtual Environments and Conda HPC Wiki.pdf)
