@@ -14,10 +14,10 @@ kernelspec:
 
 # HPC Wiki
 ## Uploading data to the HPC:
-<iframe src="https://drive.google.com/file/d/1TAkaiJN1UfFvToH-JKN8uafHCfXssYKC/view?usp=share_link" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1TAkaiJN1UfFvToH-JKN8uafHCfXssYKC/preview" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
 
 ## Using Conda on HPC:
-[📄 Click here to download and open the wiki article](./figures/Virtual Environments and Conda HPC Wiki.pdf)
+<iframe src="https://drive.google.com/file/d/1Ldbn6mWo3QjKaoPcR0rYIZ7-H_um2NkG/preview" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
 
 ## Using Neurodesktop on HPC:
-[📄 Click here to download and open the wiki article](./figures/Neurodesktop | HPC Wiki.pdf)
+<iframe src="https://drive.google.com/file/d/1mUvB8uUW8VLVKEg8Lu0Fw4Bwz7E7l4uc/preview" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
