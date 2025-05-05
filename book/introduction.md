@@ -38,7 +38,7 @@ Explore the session {fas}`arrow-right`
 :::{grid-item-card}
 :class-body: text-center
 :class-header: bg-light text-center
-:link: ./solutions/solutions_file
+:link: ../book/solutions/Solutions_exercises.ipynb
 :link-type: doc
 Exercise solutions 📋
 ^^^
@@ -52,7 +52,7 @@ Look at the solutions {fas}`arrow-right`
 :::{grid-item-card}
 :class-body: text-center
 :class-header: bg-light text-center
-:link: ./references.md
+:link: ../book/references.md
 :link-type: doc
 References 📚
 ^^^
