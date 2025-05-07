@@ -12,10 +12,10 @@ kernelspec:
   name: python3
 ---
 
-We can either run the code locally with Python installed on our own machine, or utilise the universities' High Performance Compute (HPC) cluster. Two options are described in this Jupyter Notebook.
-
 
 # Setup coding environment
+
+We can either run the code locally with Python installed on our own machine, or utilise the universities' High Performance Compute (HPC) cluster. Two options are described in this Jupyter Notebook.
 
 ## Local code execution:
 If you decide to run the code locally you can follow the guide here:
