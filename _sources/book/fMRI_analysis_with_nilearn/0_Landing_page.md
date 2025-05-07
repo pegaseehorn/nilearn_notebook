@@ -16,10 +16,10 @@ kernelspec:
 ## Welcome to the session on fMRI analyis with NiLearn in Python!
 
 
-<iframe src="https://drive.google.com/file/d/1VCmdiTL-lTuWh1fCJKYlUQ3a19tCe7t2/preview" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/12nPlNaRgQcMpHI2p00ymXJEo1ryEEigw/preview" width="100%" height="600" frameborder="0" allowfullscreen></iframe>
 
 
-[📄 Click here to download and open the Slides](./figures/S01_Introduction_to_IPYNB.pdf)
+[📄 Click here to download and open the Slides!](./figures/NiLearn_presentation.pdf)
 
 
 
